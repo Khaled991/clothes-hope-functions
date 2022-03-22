@@ -1,41 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, ReactElement, Suspense, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Header from './layout/header/header';
+import { useTranslation } from 'react-i18next';
 
-import { useAppSelector, useAppDispatch } from './redux/hooks';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  selectCount,
-} from './redux/counter/counter.slice';
-function App() {
-  const count = useAppSelector(selectCount);
-  const dispatch = useAppDispatch();
+const Home = lazy(() => import('./pages/home/home'));
+
+const App = (): ReactElement => {
+  const { i18n } = useTranslation();
+  const { pathname } = useLocation();
+
+  const changeLanguage = () => {
+    const newLanguage =
+      localStorage.getItem('i18nextLng') === 'ar' ? 'en' : 'ar';
+    i18n.changeLanguage(newLanguage);
+    handleHtmlDiraction();
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.querySelector('#basic-navbar-nav')?.classList.remove('show');
+  }, [pathname]);
+
+  useEffect(() => {
+    if (localStorage.getItem('i18nextLng') === undefined)
+      i18n.changeLanguage('en');
+
+    handleHtmlDiraction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleHtmlDiraction = () => {
+    document.querySelector('html')!.style.direction =
+      i18n.language === 'ar' ? 'rtl' : 'ltr';
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>{count}</h1>
-
-        <button onClick={() => dispatch(decrement())}>-</button>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(incrementByAmount(5))}>
-          increment by 5
-        </button>
-      </header>
+    <div className="root-container">
+      <Header changeLanguage={changeLanguage} />
+      <div className="root-content__pages">
+        <Container>
+          <Suspense fallback={<div>loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Suspense>
+        </Container>
+      </div>
+      <ToastContainer />
     </div>
   );
-}
+};
 
 export default App;
