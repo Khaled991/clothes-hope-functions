@@ -1,8 +1,8 @@
-import { IItem } from './cart.slice';
+import { IItem } from "./cart.model";
 
 export const addItemToCart = (cartItems: IItem[], cartItemToAdd: IItem) => {
   const existingCartItem = cartItems.find(
-    cartItem => cartItem.id === cartItemToAdd.id
+    (cartItem) => cartItem.id === cartItemToAdd.id
   );
   if (existingCartItem)
     return cartItems.map((cartItem: IItem) =>
@@ -18,12 +18,12 @@ export const removeItemFromCart = (
   cartItemToRemove: IItem
 ) => {
   const existingCartItem = cartItems.find(
-    cartItem => cartItem.id === cartItemToRemove.id
+    (cartItem) => cartItem.id === cartItemToRemove.id
   );
-  if (existingCartItem.quantity === 1) {
-    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
+  if (existingCartItem?.quantity === 1) {
+    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
   }
-  return cartItems.map(cartItem =>
+  return cartItems.map((cartItem) =>
     cartItem.id === cartItemToRemove.id
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem

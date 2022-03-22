@@ -1,11 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counter/counter.slice';
-import cartReducer from './cart/cart.slice';
+import { configureStore } from "@reduxjs/toolkit";
+import directoryReducer from "./directory/directory.slice";
+import cartReducer from "./cart/cart.slice";
+import shopReducer from "./shop/shop.slice";
+import userReducer from "./user/user.slice";
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    directory: directoryReducer,
     cart: cartReducer,
+    shop: shopReducer,
+    user: userReducer,
   },
 });
 
