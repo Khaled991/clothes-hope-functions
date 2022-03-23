@@ -5,5 +5,7 @@
 
   "home": "Home",
   "shop": "Shop",
-  "signIn": "Sign In"
+  "signIn": "Sign In",
+
+  "currency": "EGP"
 }
