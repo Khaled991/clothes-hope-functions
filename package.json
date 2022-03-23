@@ -24,7 +24,10 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+<<<<<<< HEAD
     "react-toastify": "^8.2.0",
+=======
+>>>>>>> 70080925a542d27aabb68dfe640b0b2a689c805e
     "sass": "^1.49.9",
     "typescript": "^4.6.2",
     "web-vitals": "^2.1.4"
