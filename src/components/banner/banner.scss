@@ -1,0 +1,51 @@
+@import '../../sass/variables';
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 0.1rem solid $grey-2;
+
+  &__text {
+    background-color: lighten($color: $primary, $amount: 20%);
+    color: $grey-1;
+    opacity: 1;
+    padding: 0.3rem;
+    margin: 0 1rem;
+    border-radius: 0.4rem;
+
+    @media (max-width: 506px) {
+      & {
+        font-size: 1.3rem;
+        margin: 0 0rem;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    margin: 0 1rem;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    .icon {
+      width: 1.8rem;
+      margin: 0 0.6rem;
+      fill: $grey-dark-1;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      .icon {
+        fill: $primary;
+      }
+      color: $primary;
+    }
+  }
+}

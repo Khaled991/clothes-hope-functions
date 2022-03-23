@@ -1,8 +1,6 @@
 import Rate from "rc-rate";
 import "./product-card.scss";
 
-import { ReactComponent as Star } from "../../assets/icons/star.svg";
-
 interface ProductCardProps {
   id: number;
   name: string;
@@ -22,4 +20,6 @@ const ProductCard = ({ name, imageUrl, rate, price }: ProductCardProps) => {
   );
 };
 
-export default ProductCard;
+// export default ProductCard;
+
+export {};
