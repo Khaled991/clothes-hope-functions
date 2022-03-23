@@ -14,7 +14,7 @@ const App = (): ReactElement => {
 
   const changeLanguage = () => {
     const newLanguage =
-      localStorage.getItem('i18nextLng') === 'ar' ? 'en' : 'ar';
+      localStorage.getItem('i18nextLng') === 'ar-EG' ? 'en-US' : 'ar-EG';
     i18n.changeLanguage(newLanguage);
     handleHtmlDiraction();
   };
@@ -26,7 +26,7 @@ const App = (): ReactElement => {
 
   useEffect(() => {
     if (localStorage.getItem('i18nextLng') === undefined)
-      i18n.changeLanguage('en');
+      i18n.changeLanguage('ar-EG');
 
     handleHtmlDiraction();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,7 +34,7 @@ const App = (): ReactElement => {
 
   const handleHtmlDiraction = () => {
     document.querySelector('html')!.style.direction =
-      i18n.language === 'ar' ? 'rtl' : 'ltr';
+      i18n.language === 'ar-EG' ? 'rtl' : 'ltr';
   };
 
   return (

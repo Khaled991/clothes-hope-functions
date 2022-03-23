@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   color: $grey-dark-1;
   background-color: $grey-2;
+  direction: rtl;
 }
 
 a {
@@ -32,11 +33,11 @@ a {
 .root-content {
   &__pages {
     min-height: 100vh;
-    // padding-top: 11.75rem;
+    padding-top: 11.75rem;
   }
 }
 
-.rtl {
-  direction: rtl;
-  text-align: right;
+.ltr {
+  direction: ltr;
+  text-align: left;
 }

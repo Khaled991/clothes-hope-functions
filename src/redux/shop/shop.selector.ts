@@ -1,4 +1,5 @@
-import { RootState } from "../store";
+// import { RootState } from "../store";
 
-export const selectShopCollections = (state: RootState) =>
-  state.shop.collections;
+// export const selectShopCollections = (state: RootState) =>
+//   state.shop.collections;
+export {};

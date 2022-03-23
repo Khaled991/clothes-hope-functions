@@ -1,0 +1,19 @@
+@import '../../sass/variables';
+
+.custome-input {
+  border: none;
+  padding: 1rem;
+  outline: none;
+  border: 0.1rem solid $grey-2;
+  resize: none;
+  font-size: 1.8rem;
+  width: 100%;
+  margin: 1rem 0;
+  &::placeholder {
+    font-size: 1.8rem;
+    color: $grey-dark-2;
+  }
+  &:focus {
+    border: 0.1rem solid $primary;
+  }
+}

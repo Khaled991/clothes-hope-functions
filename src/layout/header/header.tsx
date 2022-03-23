@@ -1,5 +1,5 @@
 import { ReactElement, useState, useEffect } from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 // import Logo from '../../assets/img/logo.webp';
 import './header.scss';
 import Banner from '../../components/banner/banner';
@@ -7,6 +7,7 @@ import { t } from 'i18next';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import NavDropdownItem from '../../components/navDropdownItem/navDropdownItem';
+import CustomButton, { ButtonType } from '../../components/button/button';
 
 interface IHeaderProps {
   changeLanguage: () => void;
@@ -41,6 +42,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
           <Navbar.Brand href="#home">
             <NavLink to="/">
               <h1>HELLOOOOO</h1>
+
               {/* <motion.img
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -68,8 +70,33 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 >
                   {t('home')}
                 </NavDropdownItem>
+                <NavDropdownItem
+                  to="/shop"
+                  active={activeLink === '/shop'}
+                  onClick={() => setActiveLink('/shop')}
+                >
+                  {t('shop')}
+                </NavDropdownItem>
+                <NavDropdownItem
+                  to="/sign-in"
+                  active={activeLink === '/sign-in'}
+                  onClick={() => setActiveLink('/sign-in')}
+                >
+                  {t('signIn')}
+                </NavDropdownItem>
               </Nav>
             </motion.div>
+            {/* <Nav>
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <CustomButton type={ButtonType.solid}>Search</CustomButton>
+              </Form>
+            </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>

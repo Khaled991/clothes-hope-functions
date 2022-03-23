@@ -1,19 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { setCurrentUserReducer } from "./user.reducer";
-import { UserState } from "./user.model";
+// import { createSlice } from "@reduxjs/toolkit";
+// import { setCurrentUserReducer } from "./user.reducer";
+// import { UserState } from "./user.model";
 
-const initialState: UserState = {
-  currentUser: null,
-};
+// const initialState: UserState = {
+//   currentUser: null,
+// };
 
-export const userSlice = createSlice({
-  name: "user",
-  initialState,
-  reducers: {
-    setCurrentUser: setCurrentUserReducer,
-  },
-});
+// export const userSlice = createSlice({
+//   name: "user",
+//   initialState,
+//   reducers: {
+//     setCurrentUser: setCurrentUserReducer,
+//   },
+// });
 
-export const { setCurrentUser } = userSlice.actions;
+// export const { setCurrentUser } = userSlice.actions;
 
-export default userSlice.reducer;
+// export default userSlice.reducer;
+export {};

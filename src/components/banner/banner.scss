@@ -8,7 +8,7 @@
   border-bottom: 0.1rem solid $grey-2;
 
   &__text {
-    background-color: lighten($color: $primary, $amount: 2);
+    background-color: lighten($color: $primary, $amount: 20%);
     color: $grey-1;
     opacity: 1;
     padding: 0.3rem;
