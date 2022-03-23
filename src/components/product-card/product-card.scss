@@ -1,0 +1,21 @@
+.product-card {
+  padding: 0 2rem;
+  width: 18rem;
+  &--image {
+    width: 17.5rem;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+
+  &--name {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1rem 2.5rem 0.5rem 2.5rem;
+  }
+
+  &--price {
+    font-size: 18px;
+  }
+}
