@@ -1,34 +1,27 @@
-// import { ReactComponent as Star } from '../../assets/icons/star.svg';
-// import { ReactComponent as StarHalf } from '../../assets/icons/star-half.svg';
-// import './product-card.scss';
+import Rate from "rc-rate";
+import { t } from "i18next";
 
-// interface ProductCardProps {
-//   id: number;
-//   name: string;
-//   imageUrl: string;
-//   rate: number;
-//   price: number;
-// }
+import "./product-card.scss";
 
-// const ProductCard = ({ id, name, imageUrl, rate, price }: ProductCardProps) => {
-//   return (
-//     <div>
-//       <img src={imageUrl} alt={name} />
-//       <h3>{name}</h3>
-//       {/* #A8A8A8 #FEBE02 */}
+interface ProductCardProps {
+  id: number;
+  name: string;
+  imageUrl: string;
+  rate: number;
+  price: number;
+}
 
-//       {Array.from({ length: rate }).map((_, i) => (
-//         <Star key={i} style={{ fill: '#FEBE02' }} width="20" />
-//       ))}
-//       <StarHalf width="20" />
-//       {Array.from({ length: 5 - rate }).map((_, i) => (
-//         <Star key={i} style={{ fill: '#A8A8A8' }} width="20" />
-//       ))}
-//       <h4>{price}$</h4>
-//     </div>
-//   );
-// };
+const ProductCard = ({ name, imageUrl, rate, price }: ProductCardProps) => {
+  return (
+    <div className="product-card">
+      <img className="product-card--image" src={imageUrl} alt={name} />
+      <div className="product-card--name">{name}</div>
+      <div className="product-card--price">
+        {price.toFixed(2)} {t("currency")}
+      </div>
+      <Rate value={rate} direction="ltr" allowHalf disabled />
+    </div>
+  );
+};
 
-// export default ProductCard;
-
-export {};
+export default ProductCard;
