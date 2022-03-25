@@ -1,11 +1,15 @@
 import { ReactElement } from 'react';
+import ProductsHomeCard from '../../components/prodacts-home-card/products-home-card';
 import './home.scss';
 
 const Home = (): ReactElement => {
   return (
     <div className="home-page">
-      <h1>Home page</h1>
-      <h1>2</h1>
+      <ProductsHomeCard
+        title="Shoes"
+        image="https://www.seekpng.com/png/full/12-124307_free-icons-png-puma-shoes-png-hd.png"
+        numberOfItems={232}
+      />
     </div>
   );
 };

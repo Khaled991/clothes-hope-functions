@@ -1,6 +1,6 @@
 import { NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import i18n from './../../i18next';
+import i18n from '../../i18next';
 
 interface INavDropdownItem {
   active: boolean;

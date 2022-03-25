@@ -5,15 +5,12 @@
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
-  border-bottom: 0.1rem solid $grey-2;
 
   &__text {
-    background-color: lighten($color: $primary, $amount: 20%);
-    color: $grey-1;
+    color: $grey-dark-1;
     opacity: 1;
     padding: 0.3rem;
     margin: 0 1rem;
-    border-radius: 0.4rem;
 
     @media (max-width: 506px) {
       & {
@@ -33,6 +30,8 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.2s;
+    padding: 0 1rem;
+    border-left: 0.1rem solid $grey-2;
 
     .icon {
       width: 1.8rem;

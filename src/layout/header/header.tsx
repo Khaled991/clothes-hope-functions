@@ -1,13 +1,23 @@
 import { ReactElement, useState, useEffect } from 'react';
-import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
-// import Logo from '../../assets/img/logo.webp';
+import {
+  // Button,
+  Container,
+  // Form,
+  // FormControl,
+  Nav,
+  Navbar,
+  Offcanvas,
+} from 'react-bootstrap';
+import { ReactComponent as Search } from '../../assets/icons/search.svg';
+import { ReactComponent as Cart } from '../../assets/icons/cart.svg';
 import './header.scss';
 import Banner from '../../components/banner/banner';
 import { t } from 'i18next';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import NavDropdownItem from '../../components/navDropdownItem/navDropdownItem';
-import CustomButton, { ButtonType } from '../../components/button/button';
+import NavDropdownItem from '../../components/nav-dropdownItem/nav-dropdownItem';
+// import CustomButton, { ButtonType } from '../../components/button/button';
+import i18n from '../../i18next';
 
 interface IHeaderProps {
   changeLanguage: () => void;
@@ -27,7 +37,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
     <header>
       <Banner changeLanguage={changeLanguage} />
       <Navbar
-        expand="lg"
+        // expand="lg"
         className="navbar-custom"
         fixed="top"
         variant="light"
@@ -37,32 +47,53 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               ? `${4.35 - window.scrollY / 10}rem`
               : 0,
         }}
+        expand={false}
       >
         <Container>
+          <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Brand href="#home">
             <NavLink to="/">
-              <h1>HELLOOOOO</h1>
-
-              {/* <motion.img
+              <motion.img
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.2 }}
-                src={Logo}
+                src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
                 alt="Logo"
                 className="logo"
                 width="600"
                 height="400"
-              /> */}
+              />
             </NavLink>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <motion.div
-              initial={{ y: -200 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.2 }}
-            >
-              <Nav className="me-auto">
+          <div className="nav-buttons">
+            <div className="nav-buttons__icon-box">
+              <Cart className="nav-buttons__icon" />
+              <span className="nav-buttons__notification">7</span>
+            </div>
+            <Search className="nav-buttons__icon" />
+          </div>
+
+          <Navbar.Offcanvas
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+            placement={i18n.language === 'ar-EG' ? 'end' : 'start'}
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id="offcanvasNavbarLabel">
+                القائمة
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body id="offcanvas-body">
+              {/* <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form> */}
+              <Nav>
                 <NavDropdownItem
                   to="/"
                   active={activeLink === '/'}
@@ -78,26 +109,15 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                   {t('shop')}
                 </NavDropdownItem>
                 <NavDropdownItem
-                  to="/sign-in"
-                  active={activeLink === '/sign-in'}
-                  onClick={() => setActiveLink('/sign-in')}
+                  to="/about-us"
+                  active={activeLink === '/about-us'}
+                  onClick={() => setActiveLink('/about-us')}
                 >
-                  {t('signIn')}
+                  {t('aboutUs')}
                 </NavDropdownItem>
               </Nav>
-            </motion.div>
-            {/* <Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <CustomButton type={ButtonType.solid}>Search</CustomButton>
-              </Form>
-            </Nav> */}
-          </Navbar.Collapse>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
         </Container>
       </Navbar>
     </header>
