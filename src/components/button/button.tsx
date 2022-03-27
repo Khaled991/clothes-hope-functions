@@ -1,25 +1,30 @@
 import { ReactElement } from 'react';
+import { IHtmlProps } from '../../models/html-props';
 import './button.scss';
 
 export enum ButtonType {
-  solid = 'solid-btn',
-  borderButton = 'border-btn',
+  solid = 'btn__solid',
+  border = 'btn__border',
+}
+export enum ButtonColor {
+  primary = 'primary',
+  google = 'google',
 }
 
-interface CustomButtonProps {
+interface CustomButtonProps extends IHtmlProps {
   children: React.ReactNode;
-  type: ButtonType;
-  onClick?: () => void;
+  btnType: ButtonType;
+  color: ButtonColor;
 }
 
 const CustomButton = ({
   children,
-  type,
-  onClick,
+  btnType,
+  color,
   ...props
 }: CustomButtonProps): ReactElement => {
   return (
-    <button onClick={onClick} className={`btn ${type}`} {...props}>
+    <button className={`btn ${btnType} ${btnType}--${color}`} {...props}>
       {children}
     </button>
   );

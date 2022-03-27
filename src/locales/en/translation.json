@@ -3,11 +3,24 @@
   "arabic": "Arabic",
   "english": "English",
   "bannerTitle": "Free Shipping on over 100EGP",
+  "currency": "EGP",
 
   "home": "Home",
   "shop": "Shop",
   "aboutUs": "About Us",
   "signIn": "Sign In",
 
-  "currency": "EGP"
+  "signInWithGoogle": "Sign in with google",
+  "iAlreadyHaveAnAccount": "I already have an account",
+  "signInWithYourEmailAndPassword": "Sign in with your email and password",
+  "idoNotHaveAnAccount": "I don't have an account",
+  "signUpWithYourEmailAndPassword": "Sign up with your email and password",
+  "signUp": "Sign Up",
+  "name": "Name",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm password",
+
+  "item": "item",
+  "items": "items"
 }

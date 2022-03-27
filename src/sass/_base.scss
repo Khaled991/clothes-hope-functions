@@ -20,19 +20,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
   color: $grey-dark-1;
-  background-color: $grey-2;
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
+  color: $grey-dark-1;
+  &:hover {
+    color: $grey-dark-1;
+  }
 }
 
 .root-content {
   &__pages {
     min-height: 100vh;
-    padding-top: 11.75rem;
+    // padding-top: 11.75rem;
+    padding-top: 8.5rem;
   }
 }
 

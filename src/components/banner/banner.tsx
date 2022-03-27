@@ -14,9 +14,7 @@ const Banner = ({ changeLanguage }: IBannerProps): ReactElement => {
   const bannerNavButton = [
     {
       title:
-        localStorage.getItem('i18nextLng') === 'ar-EG'
-          ? t('english')
-          : t('arabic'),
+        localStorage.getItem('i18nextLng') === 'ar-EG' ? 'English' : 'عربي',
       onClick: () => changeLanguage(),
     },
     {

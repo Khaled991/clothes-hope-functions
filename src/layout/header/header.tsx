@@ -1,13 +1,5 @@
 import { ReactElement, useState, useEffect } from 'react';
-import {
-  // Button,
-  Container,
-  // Form,
-  // FormControl,
-  Nav,
-  Navbar,
-  Offcanvas,
-} from 'react-bootstrap';
+import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { ReactComponent as Search } from '../../assets/icons/search.svg';
 import { ReactComponent as Cart } from '../../assets/icons/cart.svg';
 import './header.scss';
@@ -37,7 +29,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
     <header>
       <Banner changeLanguage={changeLanguage} />
       <Navbar
-        // expand="lg"
+        expand={false}
         className="navbar-custom"
         fixed="top"
         variant="light"
@@ -47,7 +39,6 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               ? `${4.35 - window.scrollY / 10}rem`
               : 0,
         }}
-        expand={false}
       >
         <Container>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -84,15 +75,6 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body id="offcanvas-body">
-              {/* <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form> */}
               <Nav>
                 <NavDropdownItem
                   to="/"

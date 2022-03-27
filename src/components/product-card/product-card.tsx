@@ -1,7 +1,7 @@
-import Rate from "rc-rate";
-import { t } from "i18next";
+import Rate from 'rc-rate';
+import { t } from 'i18next';
 
-import "./product-card.scss";
+import './product-card.scss';
 
 interface ProductCardProps {
   id: number;
@@ -17,7 +17,7 @@ const ProductCard = ({ name, imageUrl, rate, price }: ProductCardProps) => {
       <img className="product-card--image" src={imageUrl} alt={name} />
       <div className="product-card--name">{name}</div>
       <div className="product-card--price">
-        {price.toFixed(2)} {t("currency")}
+        {price.toFixed(2)} {t('currency')}
       </div>
       <Rate value={rate} direction="ltr" allowHalf disabled />
     </div>

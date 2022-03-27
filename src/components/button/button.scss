@@ -1,5 +1,15 @@
 @import '../../sass/variables';
 
+@mixin btn-solid-modifier($bg-color, $text-color) {
+  color: $text-color;
+
+  background-color: $bg-color;
+  &:hover {
+    background-color: darken($color: $bg-color, $amount: 4);
+    color: $text-color;
+  }
+}
+
 .btn {
   padding: 1.5rem 2rem;
   border: none;
@@ -11,21 +21,39 @@
   font-family: inherit;
   transition: all 0.2s;
   white-space: nowrap;
+  border-radius: 0;
   &:focus {
     box-shadow: none;
   }
+
+  &__solid {
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+    &:active {
+      transform: translateY(0.1rem);
+    }
+
+    &--primary {
+      @include btn-solid-modifier($primary, $grey-1);
+    }
+
+    &--google {
+      @include btn-solid-modifier($google-button-blue, $grey-1);
+    }
+  }
 }
 
-.solid-btn {
-  background-color: $primary;
-  color: $grey-1;
+// .google-blue-btn {
+//   background-color: $google-button-blue;
+//   color: $grey-1;
 
-  &:hover {
-    transform: translateY(-0.2rem);
-    background-color: darken($color: $primary, $amount: 4);
-    color: $grey-1;
-  }
-  &:active {
-    transform: translateY(0.1rem);
-  }
-}
+//   &:hover {
+//     transform: translateY(-0.2rem);
+//     background-color: darken($color: $google-button-blue, $amount: 4);
+//     color: $grey-1;
+//   }
+//   &:active {
+//     transform: translateY(0.1rem);
+//   }
+// }
