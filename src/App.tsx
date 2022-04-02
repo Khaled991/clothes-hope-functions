@@ -8,6 +8,7 @@ import 'rc-rate/assets/index.css';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductCard from './components/product-card/product-card';
 
+const ContactUs = lazy(() => import('./pages/contact-us/contact-us'));
 const Home = lazy(() => import('./pages/home/home'));
 const SignInAndSignUpPage = lazy(
   () => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up')
@@ -51,6 +52,7 @@ const App = (): ReactElement => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sign-in" element={<SignInAndSignUpPage />} />
+            <Route path="/contact-us" element={<ContactUs />} />
             <Route
               path="/x"
               element={
