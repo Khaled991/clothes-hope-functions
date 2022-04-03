@@ -36,8 +36,9 @@ const App = (): ReactElement => {
   }, []);
 
   const handleHtmlDiraction = () => {
-    document.querySelector('html')!.style.direction =
-      i18n.language === 'ar-EG' ? 'rtl' : 'ltr';
+    document.querySelector('html')!.style.direction = isArabic()
+      ? 'rtl'
+      : 'ltr';
   };
 
   return (

@@ -21,6 +21,7 @@
   "password": "Password",
   "confirmPassword": "Confirm password",
   "wrongSignInData": "Wrong data. Please check your email and password",
+  "userNotFound": "Account not registered yet",
   "accountTemporarilyDisabled": "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later",
   "passwordDoesntMatch": "Password doesn't match",
   "emailAlreadyInUse": "Email already in use",
