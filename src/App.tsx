@@ -5,6 +5,7 @@ import Header from './layout/header/header';
 import { useTranslation } from 'react-i18next';
 import 'rc-rate/assets/index.css';
 import 'react-toastify/dist/ReactToastify.css';
+import { isArabic, isLanguageNotInitilaized } from './utils/locale.utils';
 
 const ContactUs = lazy(() => import('./pages/contact-us/contact-us'));
 const Home = lazy(() => import('./pages/home/home'));
@@ -17,8 +18,7 @@ const App = (): ReactElement => {
   const { pathname } = useLocation();
 
   const changeLanguage = () => {
-    const newLanguage =
-      localStorage.getItem('i18nextLng') === 'ar-EG' ? 'en-US' : 'ar-EG';
+    const newLanguage = isArabic() ? 'en-US' : 'ar-EG';
     i18n.changeLanguage(newLanguage);
     handleHtmlDiraction();
   };
@@ -29,8 +29,7 @@ const App = (): ReactElement => {
   }, [pathname]);
 
   useEffect(() => {
-    if (localStorage.getItem('i18nextLng') === undefined)
-      i18n.changeLanguage('ar-EG');
+    if (isLanguageNotInitilaized()) i18n.changeLanguage('ar-EG');
 
     handleHtmlDiraction();
     // eslint-disable-next-line react-hooks/exhaustive-deps
