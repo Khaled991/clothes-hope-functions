@@ -1,49 +1,44 @@
 import { ReactElement } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import ProductsHomeCard from './../../components/products-home-card/products-home-card';
 import './home.scss';
-import { homeData } from './../../components/products-home-card/products-home-card.data';
+import HomeImage from '../../assets/images/home-image.jpg';
+import HomeLayout from '../../layout/home-layout/home-layout';
+// import { Container } from 'react-bootstrap';
+// import ProductCard from '../../components/product-card/product-card';
 
 const Home = (): ReactElement => {
   return (
     <div className="home-page">
-      <Row className="d-flex">
-        <Col className="home-cards-container">
-          {homeData.map(({ id, ...props }) => (
-            <ProductsHomeCard key={id} {...props} />
-          ))}
-
-          <ProductsHomeCard
-            path="/"
-            cardColor="#e2ece9"
-            title="Shoes"
-            image="https://www.seekpng.com/png/full/12-124307_free-icons-png-puma-shoes-png-hd.png"
-            numberOfItems={1}
-          />
-          <ProductsHomeCard
-            path="/"
-            cardColor="#e2ece9"
-            title="Shoes"
-            image="https://www.seekpng.com/png/full/12-124307_free-icons-png-puma-shoes-png-hd.png"
-            numberOfItems={232}
-          />
-          <ProductsHomeCard
-            path="/"
-            cardColor="#e2ece9"
-            title="Shoes"
-            image="https://www.seekpng.com/png/full/12-124307_free-icons-png-puma-shoes-png-hd.png"
-            numberOfItems={232}
-          />
-          <ProductsHomeCard
-            path="/"
-            cardColor="#e2ece9"
-            title="Shoes"
-            image="https://www.seekpng.com/png/full/12-124307_free-icons-png-puma-shoes-png-hd.png"
-            numberOfItems={232}
-          />
-        </Col>
-        <Col>{/* <div style={{ height: 999 }}></div> */}</Col>
-      </Row>
+      <HomeLayout image={HomeImage} title="shop" copyrightText="copyright" />
+      {/* <Container style={{ display: 'flex' }}>
+        <ProductCard
+          id={1}
+          name="Hello asnc knsal nsalk nlksa nsal mkals lsa"
+          imageUrl="https://thumbs.dreamstime.com/b/blue-shoes-29507491.jpg"
+          rate={2}
+          price={100}
+        />
+        <ProductCard
+          id={1}
+          name="Hello asnc knsal nsalk nlksa nsal mkals lsa"
+          imageUrl="https://thumbs.dreamstime.com/b/blue-shoes-29507491.jpg"
+          rate={2}
+          price={100}
+        />
+        <ProductCard
+          id={1}
+          name="Hello asnc knsal nsalk nlksa nsal mkals lsa"
+          imageUrl="https://thumbs.dreamstime.com/b/blue-shoes-29507491.jpg"
+          rate={2}
+          price={100}
+        />
+        <ProductCard
+          id={1}
+          name="Hello asnc knsal nsalk nlksa nsal mkals lsa"
+          imageUrl="https://thumbs.dreamstime.com/b/blue-shoes-29507491.jpg"
+          rate={2}
+          price={100}
+        />
+      </Container> */}
     </div>
   );
 };

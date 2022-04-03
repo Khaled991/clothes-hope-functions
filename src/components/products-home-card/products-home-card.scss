@@ -6,9 +6,9 @@
   justify-content: center;
   flex-direction: column;
   width: 18.9rem;
-  height: 18.9rem;
+  height: 15.9rem;
   transition: 0.9s;
-  margin: 0.4rem;
+  margin: 1rem;
   margin-left: 0;
   cursor: pointer;
   &__image {
@@ -28,7 +28,7 @@
   }
   &:hover {
     box-shadow: 0 0 2rem rgba($color: #000, $alpha: 0.2);
-    transform: scale(1.34, 1.34);
+    transform: scale(1.1, 1.1);
     background-color: $grey-1;
 
     .products-home-card__items-number {
